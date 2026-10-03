@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yanping Zhu</title>
+<meta name="description" content="Yanping Zhu, Ph.D. candidate in Accounting at NYU Stern School of Business. Research on bank accounting, financial institutions, and the economics of financial reporting."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Yanping Zhu"/>
+<meta property="og:description" content="Ph.D. candidate in Accounting at NYU Stern School of Business."/>
+<link rel="icon" href="data:,"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,600&display=swap"/>
+<style>
+  :root {
+    --bg: #ffffff; --text: #1f1d24; --muted: #5f5a68; --faint: #8b8694;
+    --accent: #57068c; --accent-dark: #330662;   /* NYU Violet, NYU Deep Violet */
+    --tint: #eee6f3; --panel: #f7f4fa; --line: #e7e2ed; --chip-border: #d8cde4;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.65; border-top: 4px solid var(--accent); }
+  a { color: var(--accent); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+  .icon { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* HEADER */
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.25rem; padding-bottom: 1.25rem; }
+  .brand { color: var(--text); text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 1.1rem; }
+  .nav { display: flex; gap: 2rem; list-style: none; }
+  .nav a { color: var(--muted); text-decoration: none; padding: 0.2rem 0; background: linear-gradient(var(--accent), var(--accent)) left bottom / 0 2px no-repeat; transition: color 0.2s, background-size 0.25s; }
+  .nav a:hover, .nav a:focus-visible { color: var(--accent); background-size: 100% 2px; }
+
+  /* INTRO */
+  .intro-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; padding-top: 4rem; padding-bottom: 4.5rem; }
+  .intro h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.5rem, 6vw, 3.75rem); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.1rem; }
+  .role { font-size: 1.25rem; }
+  .org { font-size: 1.25rem; color: var(--muted); }
+  .quick-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.75rem; list-style: none; margin-top: 1.75rem; }
+  .quick-links a { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; }
+  .quick-links a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+  .email-line { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .email-line .icon { color: var(--muted); }
+  .intro-photo { display: block; width: 220px; height: 220px; object-fit: cover; border-radius: 50%; }
+
+  /* SECTIONS */
+  .section-grid { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 2.5rem; padding: 3.5rem 0; border-top: 1px solid var(--line); }
+  .section-title { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; line-height: 1.25; align-self: start; position: sticky; top: 1.5rem; }
+  .section-title::before { content: ''; display: block; width: 32px; height: 3px; border-radius: 2px; background: var(--accent); margin-bottom: 0.85rem; }
+  .prose p { max-width: 42em; }
+  .prose p + p { margin-top: 1rem; }
+
+  /* RESEARCH */
+  .list-title { font-size: 1rem; font-weight: 600; color: var(--faint); margin-bottom: 1.4rem; }
+  .paper + .paper { margin-top: 2.6rem; }
+  .paper-title { font-family: var(--serif); font-weight: 600; font-size: 1.25rem; line-height: 1.35; margin-bottom: 0.45rem; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .paper-meta { color: var(--muted); }
+  .paper-meta a { color: inherit; text-decoration: underline; text-decoration-color: var(--chip-border); text-underline-offset: 3px; }
+  .paper-meta a:hover { color: var(--accent); text-decoration-color: currentColor; }
+  .status { display: inline-block; font-size: 0.8rem; font-weight: 600; line-height: 1.6; color: var(--accent-dark); background: var(--tint); border-radius: 999px; padding: 0 0.6rem; margin-right: 0.3rem; vertical-align: 0.1em; }
+  .journal { font-style: italic; }
+  .paper-media { display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem 0.5rem; margin-top: 0.5rem; color: var(--muted); }
+  .paper-media .icon { color: var(--accent); }
+  .paper-media a { font-weight: 600; text-decoration: none; }
+  .paper-media a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .paper-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+  .chip { display: inline-flex; align-items: center; gap: 0.45rem; font: 600 0.85rem/1 var(--sans); color: var(--accent); background: var(--bg); border: 1px solid var(--chip-border); border-radius: 999px; padding: 0.45rem 0.9rem; text-decoration: none; cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .chip:hover { border-color: var(--accent); background: var(--panel); }
+  .chip[aria-expanded="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.chip::after { content: ''; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 0.2s; }
+  button.chip[aria-expanded="true"]::after { transform: translateY(1px) rotate(-135deg); }
+  .paper-abstract { margin-top: 1rem; padding: 1.15rem 1.35rem; background: var(--panel); border-radius: 8px; font-size: 0.98rem; line-height: 1.7; color: #3a3542; }
+
+  /* TEACHING */
+  .course-list { list-style: none; }
+  .course-list li + li { margin-top: 1.6rem; }
+  .course-name { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; line-height: 1.35; margin-bottom: 0.3rem; }
+  .course-meta { color: var(--muted); }
+
+  /* CONTACT */
+  .contact-lines p + p { margin-top: 0.6rem; }
+  .contact-lines a { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; text-decoration: none; }
+  .contact-lines a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .footer-inner { border-top: 1px solid var(--line); padding: 1.75rem 0 2.5rem; font-size: 0.9rem; color: var(--faint); }
+
+  /* SMALL SCREENS */
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .nav { gap: 1.4rem; }
+    .intro-inner { grid-template-columns: 1fr; gap: 1.75rem; padding-top: 2.25rem; padding-bottom: 3rem; }
+    .intro-photo { order: -1; width: 150px; height: 150px; }
+    .role, .org { font-size: 1.1rem; }
+    .section-grid { grid-template-columns: 1fr; gap: 1.25rem; padding: 2.5rem 0; }
+    .section-title { position: static; font-size: 1.35rem; }
+  }
+  @media (max-width: 440px) {
+    .brand { display: none; }
+    .header-inner { justify-content: center; }
+    .nav { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="#top">Yanping Zhu</a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <!-- To add a CV: upload cv.pdf next to this file, then remove the comment marks around the next line. -->
+        <!-- <li><a href="cv.pdf" target="_blank">CV</a></li> -->
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="intro">
+    <div class="container intro-inner">
+      <div>
+        <h1>Yanping Zhu</h1>
+        <p class="role">Ph.D. Candidate in Accounting</p>
+        <p class="org">Stern School of Business, New York University</p>
+        <ul class="quick-links">
+          <li><span class="email-line"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span class="email" data-user="yz10705" data-domain="stern.nyu.edu">yz10705 [at] stern.nyu.edu</span></span></li>
+          <!-- <li><a href="cv.pdf" target="_blank"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>CV</a></li> -->
+        </ul>
+      </div>
+      <img class="intro-photo" src="images/headshot.jpg" alt="Yanping Zhu" width="220" height="220"/>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container"><div class="section-grid">
+      <h2 class="section-title">About</h2>
+      <div class="prose">
+        <p>Welcome! I am a Ph.D. candidate in Accounting at the Stern School of Business, New York University.</p>
+        <p>My primary research focuses on bank accounting and financial institutions. I am also generally interested in the economics of financial reporting.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="research">
+    <div class="container"><div class="section-grid">
+      <h2 class="section-title">Research</h2>
+      <div>
+        <h3 class="list-title">Working Papers</h3>
+
+        <article class="paper">
+          <h4 class="paper-title"><a href="https://drive.google.com/file/d/1WwOKJOIY2gGGSzBFuahFivgQrofAXvU2/view?usp=sharing" target="_blank" rel="noopener">The Social Costs of the Current Expected Credit Loss Approach: Evidence from Mortgage Lending</a></h4>
+          <p class="paper-meta"><span class="status">Revise and Resubmit</span> <span class="journal">Journal of Accounting and Economics</span></p>
+          <div class="paper-links">
+            <button type="button" class="chip" aria-expanded="false" aria-controls="abs-cecl">Abstract</button>
+            <a class="chip" href="https://drive.google.com/file/d/1WwOKJOIY2gGGSzBFuahFivgQrofAXvU2/view?usp=sharing" target="_blank" rel="noopener">PDF</a>
+          </div>
+          <div class="paper-abstract" id="abs-cecl" hidden>
+            <p>I examine the impact of the current expected credit loss (CECL) approach on geographic disparities in mortgage credit access between low- and moderate-income (LMI) and non-LMI census tracts. Banks are subject to the Community Reinvestment Act (CRA), a key policy to reduce credit access inequality for borrowers in LMI census tracts. Using a triple-difference design, I find that following CECL adoption, banks reduce mortgage approval rates and increase mortgage interest rates in LMI census tracts, suggesting a decrease in mortgage credit supply by CECL-adopting banks in these areas. Non-bank lenders mitigate the reduction in bank credit. I show that following CECL adoption, non-bank lenders increase mortgage approval rates in LMI census tracts with greater exposure to CECL-adopting banks, but do not charge higher interest rates when extending mortgage credit in these areas. Findings highlight that the CECL approach has social costs by reducing banks' promotion of equitable credit access under the CRA. Results also inform the policy debate on extending CRA lending requirements to non-bank lenders.</p>
+          </div>
+        </article>
+
+        <article class="paper">
+          <h4 class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5539040" target="_blank" rel="noopener">Fraud at a Distance? How Remote Work Shapes Financial Misconduct</a></h4>
+          <p class="paper-meta">with <a href="https://www.johnmbarrios.com/" target="_blank" rel="noopener">John M. Barrios</a> and Jessie Guo</p>
+          <p class="paper-meta">NBER Working Paper No. 34417</p>
+          <p class="paper-media">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h13v13a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v9a2 2 0 0 1-2 2M8 9h5M8 13h5M8 16h3"/></svg>
+            <span>Featured in <a href="https://insights.som.yale.edu/insights/remote-work-is-linked-to-decline-in-financial-misconduct" target="_blank" rel="noopener">Yale Insights</a></span>
+          </p>
+          <div class="paper-links">
+            <button type="button" class="chip" aria-expanded="false" aria-controls="abs-fraud">Abstract</button>
+            <a class="chip" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5539040" target="_blank" rel="noopener">SSRN</a>
+            <a class="chip" href="https://www.nber.org/papers/w34417" target="_blank" rel="noopener">NBER</a>
+          </div>
+          <div class="paper-abstract" id="abs-fraud" hidden>
+            <p>Financial misconduct is often a team activity, facilitated by face-to-face interactions, shared norms, and trust. We exploit the sudden shift to remote work during COVID-19 to examine how workplace organization shapes collusion and financial misconduct. Using a novel firm-level measure of work-from-home feasibility, we find that firms that are more able to operate remotely experienced large post-2020 declines in misconduct. This decline is found across multiple misreporting proxies and is robust to various alternative measures of remote work. Cross-sectional tests indicate stronger declines in teamwork-intensive firms, firms with effective internal controls, and firms with weaker pre-COVID employee perceptions of culture and leadership, consistent with environments more reliant on dense in-person relational coordination. Overall, our findings reflect that financial misconduct is a team activity, sensitive to the organizational structure of the firm, with important implications for governance and organizational design.</p>
+          </div>
+        </article>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="teaching">
+    <div class="container"><div class="section-grid">
+      <h2 class="section-title">Teaching</h2>
+      <ul class="course-list">
+        <li>
+          <p class="course-name">Principles of Financial Accounting</p>
+          <p class="course-meta">Instructor &middot; NYU Stern School of Business &middot; Summer 2026</p>
+        </li>
+      </ul>
+    </div></div>
+  </section>
+
+  <section id="contact">
+    <div class="container"><div class="section-grid">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-lines">
+        <p>Ph.D. Candidate in Accounting<br/>Stern School of Business, New York University</p>
+        <p><span class="email-line"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span class="email" data-user="yz10705" data-domain="stern.nyu.edu">yz10705 [at] stern.nyu.edu</span></span></p>
+        <!-- <p><a href="cv.pdf" target="_blank"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Download CV</a></p> -->
+      </div>
+    </div></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container"><div class="footer-inner">© Yanping Zhu</div></div>
+</footer>
+
+<script>
+  // The address is put together here, so it never appears in the page source where spam bots look for it.
+  document.querySelectorAll('.email').forEach(function (el) {
+    el.textContent = el.dataset.user + '@' + el.dataset.domain;
+  });
+
+  // Abstract buttons show and hide the abstract below them.
+  document.querySelectorAll('button[aria-controls]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.hidden = open;
+    });
+  });
+</script>
+</body>
+</html>
